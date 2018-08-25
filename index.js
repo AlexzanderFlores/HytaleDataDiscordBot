@@ -2,6 +2,7 @@ const Discord = require('discord.js')
 const client = new Discord.Client()
 const chat = require('./chat')
 const spam = require('./spam')
+const join = require('./join')
 
 const updateMemberCount = () => {
   client.user.setPresence({ game: { name: `Member Goal ${global.guild.memberCount}/500`, type: 0 } })
@@ -13,6 +14,7 @@ client.on('ready', () => {
   global.guild = client.guilds.find('id', '479007599187197974')
   chat(client)
   spam(client)
+  join(client)
   updateMemberCount()
 })
 
