@@ -78,6 +78,9 @@ To join or leave a role simply add or remove a reaction to this message.
 	}
 	
 	const member = channel.guild.members.get(user.id)
+	if(!member) {
+	  return
+	}
 	let roleName
 	
 	switch(emoji) {
@@ -97,12 +100,14 @@ To join or leave a role simply add or remove a reaction to this message.
 	    return
 	}
 	
-	const role = global.guild.roles.find('name', roleName)
-	if(add) {
-	  member.addRole(role)
-	} else {
-	  member.removeRole(role)
-	}
+	try {
+	  const role = global.guild.roles.find('name', roleName)
+	  if(add) {
+	    member.addRole(role)
+	  } else {
+	    member.removeRole(role)
+	  }
+	} catch(e) {}
   }
   
   client.on('messageReactionAdd', (reaction, user) => {
