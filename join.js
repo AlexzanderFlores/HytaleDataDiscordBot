@@ -25,6 +25,8 @@ To join or leave a role simply add or remove a reaction to this message.
 :bus: Bus Reaction = Fortnite
 :gun: Gun Reaction = Overwatch
 :bomb: Bomb Reaction = CS:GO
+
+Note: If there is an error try removing and adding the reaction again.
 	`
 	if(count === 0) {
 	  channel.sendMessage(messageText).then(message => {
