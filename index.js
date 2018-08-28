@@ -21,11 +21,9 @@ client.on('ready', () => {
 client.on('guildMemberAdd', member => {
   const channel = global.guild.channels.find('id', '479208327063011356')
   if(channel) {
-	const rules = global.guild.channels.get('479205937282809856').toString()
-	const announcements = global.guild.channels.get('479007960001937421').toString()
-	const faq = global.guild.channels.get('479888973205078016').toString()
+	const gettingStarted = global.guild.channels.get('482415761529241633').toString()
 	setTimeout(() => {
-	  channel.send(`Welcome to the official ProMcGames Discord server, ${member}! You are member #${guild.memberCount}! Be sure to read the ${rules}. Check ${announcements} and ${faq} for news on ProMc!`)
+	  channel.send(`Welcome to the official ProMcGames Discord server, ${member}! You are member #${guild.memberCount}! Be sure to check out ${gettingStarted}!`)
 	}, 1000)
   }
 })
