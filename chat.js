@@ -16,6 +16,7 @@ const deleteMessage = message => message.delete()
 
 module.exports = client => {
   clearWarnings()
+  
   client.on('message', message => {
 	const name = message.author.username
 	let content = message.content.toLowerCase()

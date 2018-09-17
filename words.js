@@ -51,6 +51,8 @@ module.exports = {
 	'kkk',
 	'nig',
 	'nigger',
+	'nga',
+	'ngga',
 	'nigr',
 	'nigg',
 	'nigga',

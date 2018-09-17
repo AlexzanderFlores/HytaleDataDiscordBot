@@ -3,6 +3,8 @@ const client = new Discord.Client()
 const chat = require('./chat')
 const spam = require('./spam')
 const join = require('./join')
+const linkMinecraft = require('./link-minecraft')
+const httpServer = require('./http-server')
 
 const updateMemberCount = () => {
   client.user.setPresence({ game: { name: `Member Goal ${global.guild.memberCount}/500`, type: 0 } })
@@ -15,6 +17,8 @@ client.on('ready', () => {
   chat(client)
   spam(client)
   join(client)
+  linkMinecraft(client)
+  httpServer(client)
   updateMemberCount()
 })
 
