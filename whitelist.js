@@ -2,7 +2,7 @@ const rp = require('request-promise')
 
 module.exports = client => {
   client.on('message', message => {
-	if(message.channel.id === '490258350131380226' && message.author.id !== '479556852984709121') {
+	if(message.channel.id === '491668857011044362' && message.author.id !== '479556852984709121') {
 	  const content = message.content
 	  const id = message.author.id
 	  if(content.indexOf(' ') >= 0) {
@@ -10,8 +10,8 @@ module.exports = client => {
 	  } else {
 		const options = {
 		  method: 'POST',
-		  uri: 'http://144.217.14.102:8080/link-discord',
-		  body: `${content.toLowerCase()}-${id}`,
+		  uri: 'http://144.217.14.102:8080/whitelist',
+		  body: `${content.toLowerCase()}`,
 		}
 		
 		rp(options).then(data => {

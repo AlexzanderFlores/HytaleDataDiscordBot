@@ -4,6 +4,7 @@ const chat = require('./chat')
 const spam = require('./spam')
 const join = require('./join')
 const linkMinecraft = require('./link-minecraft')
+const whitelist = require('./whitelist')
 const httpServer = require('./http-server')
 
 const updateMemberCount = () => {
@@ -18,6 +19,7 @@ client.on('ready', () => {
   spam(client)
   join(client)
   linkMinecraft(client)
+  whitelist(client)
   httpServer(client)
   updateMemberCount()
 })
