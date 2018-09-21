@@ -66,5 +66,27 @@ module.exports = client => {
 	}
   })
   
+  let lastMessage = ''
+  
+  app.post('/reports', (req, res) => {
+	res.end()
+	
+	const amount = req.query.a
+	
+	const channel = client.channels.get('492521529158926365')
+	if(channel) {
+	  if(amount == 0) {
+		message = 'All open reports on have been closed.'
+	  } else {
+		message = `There ${amount == 1 ? 'is' : 'are'} ${amount} open report${amount == 1 ? '' : 's'}.\n**React to this if you intend on answering these reports.**`
+	  }
+	  
+	  if(message !== lastMessage) {
+		channel.send(message)
+		lastMessage = message
+	  }
+	}
+  })
+  
   http.createServer(app).listen(8081)
 }
