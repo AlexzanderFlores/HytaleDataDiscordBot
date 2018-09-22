@@ -1,6 +1,6 @@
 const rp = require('request-promise')
 
-module.exports = client => {
+module.exports = (client, address) => {
   client.on('message', message => {
 	if(message.channel.id === '491668857011044362' && message.author.id !== '479556852984709121') {
 	  const content = message.content
@@ -10,7 +10,7 @@ module.exports = client => {
 	  } else {
 		const options = {
 		  method: 'POST',
-		  uri: 'http://144.217.14.102:8080/whitelist',
+		  uri: `http://${address}:8080/whitelist`,
 		  body: `${content.toLowerCase()}`,
 		}
 		

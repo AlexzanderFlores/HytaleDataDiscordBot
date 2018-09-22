@@ -6,6 +6,7 @@ const join = require('./join')
 const linkMinecraft = require('./link-minecraft')
 const whitelist = require('./whitelist')
 const httpServer = require('./http-server')
+const address = '144.217.14.102'
 
 const updateMemberCount = () => {
   client.user.setPresence({ game: { name: `Member Goal ${global.guild.memberCount}/500`, type: 0 } })
@@ -18,8 +19,8 @@ client.on('ready', () => {
   chat(client)
   spam(client)
   join(client)
-  linkMinecraft(client)
-  whitelist(client)
+  linkMinecraft(client, address)
+  whitelist(client, address)
   httpServer(client)
   updateMemberCount()
 })
