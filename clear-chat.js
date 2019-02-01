@@ -1,5 +1,9 @@
 module.exports = client => {
   client.on("message", message => {
+    if(!message.member) {
+      return;
+    }
+    
     if (
       (message.channel.id === "540739435801739264" ||
         message.channel.id === "539767629896744960") &&

@@ -5,6 +5,7 @@ const chat = require("./chat");
 const spam = require("./spam");
 const roleClaim = require("./role-claim");
 const clearChat = require("./clear-chat");
+const leavingMembers = require("./leaving-members");
 const httpServer = require("./http-server");
 
 const updateMemberCount = () => {
@@ -33,6 +34,7 @@ client.on("ready", () => {
   spam(client);
   roleClaim(client);
   clearChat(client);
+  leavingMembers(client);
   httpServer(client);
   updateMemberCount();
   updateBetaTesters();
